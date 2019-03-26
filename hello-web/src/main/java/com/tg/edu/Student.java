@@ -17,6 +17,10 @@ public class Student {
 //		
 //		System.out.println(str);
 //	}
+	
+	public Student() {
+		
+	}
 	public Student(ScoreDto scoreDto) {
 		this.scoreDto = scoreDto;
 	}
@@ -36,7 +40,19 @@ public class Student {
 		
 		System.out.println(str);
 	}
-		
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	
 	
 	
 	

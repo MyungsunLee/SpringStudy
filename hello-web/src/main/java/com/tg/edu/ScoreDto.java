@@ -31,7 +31,6 @@ public class ScoreDto {
 	}
 	
 	public ScoreDto(int kor, int eng) {
-//		super();
 		this.kor = kor;
 		this.eng = eng;
 	}

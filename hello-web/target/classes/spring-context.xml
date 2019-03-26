@@ -6,16 +6,27 @@
 	
 	<bean id="helloDao" class="com.tg.hello.HelloDao"/>
 	<!-- 클래스 그 자체가 하나의 bean이 됨 -->
+
+	<bean id="eduDao" class="com.tg.edu.EduDao">
+	
+	
+	</bean>
 	
 	<bean id="scoreDto" class="com.tg.edu.ScoreDto">
+<!-- 		<property name="kor" value="100"/> -->
+<!-- 		<property name="eng" value="60"/> -->
+<!-- 		<constructor-arg> -->
+<!-- 			<value type="java.lang.Integer">10</value> -->
+<!-- 		</constructor-arg> -->
 	
-		<constructor-arg>
-			<value type="java.lang.Integer">10</value>
-		</constructor-arg>
-	
-		<constructor-arg type="int" value="20"/>
-		<constructor-arg type="String">
-			<value>이야신기하다</value>
-		</constructor-arg>
+<!-- 		<constructor-arg type="int" value="20"/> -->
+<!-- 		<constructor-arg type="String"> -->
+<!-- 			<value>이야신기하다</value> -->
+<!-- 		</constructor-arg> -->
 	</bean>
+	
+		<bean id="student" class="com.tg.edu.Student">
+			
+		</bean>
+	
 </beans>
