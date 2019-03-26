@@ -1,13 +1,60 @@
 package com.tg.edu;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class EduDaoTest {	
+public class EduDaoTest {
+
+	
 	//	클래스명은 동일한 클래스 Test로 한다
+//	@RunWith(SpringJunit4ClassRunner.class)
+//	@ContextConfiguration(
+//			"file:scr/main/webapp/WEB-INF/spring/*.xml")
+	
+	
+	private AbstractApplicationContext ctx;
+	
+	@Before
+	public void setup() {	//before 어노테이션은 무조건 메서드명을 setup으로 짓기로 약속되어있음
+		ctx = new ClassPathXmlApplicationContext(
+				"/spring-context.xml");
+		
+	}
+	
+	
+	
+
+	@Test
+	public void testGetSudent() {
+		
+		AbstractApplicationContext ctx = 
+				new ClassPathXmlApplicationContext("/spring-context.xml");
+		
+			EduDao eduDao = ctx.getBean("eduDao", EduDao.class);
+			
+			
+//			eduDao.getStudent().setName("이명선");
+			
+			
+//			Assert.assertEquals("이명선", eduDao.getStudent().getName());
+			
+//			String name = eduDao.getStudent().getName();
+//			
+//			Assert.assertTrue(name.equals("이명선"));
+			
+			//오만거 다 비교할 수 있음.ㅎ
+			
+			Assert.assertNull(eduDao.getStudent()); //정말 자주쓰일것임! 얘는 true
+//			Assert.assertNull(eduDao); //얘는 false.
+			
+	}
+	
+	
 	
 //	@Test
 	//메서드 명명규칙
@@ -48,30 +95,6 @@ public class EduDaoTest {
 //		
 //	}
 //	
-	@Test
-	public void testGetSudent() {
-		
-		AbstractApplicationContext ctx = 
-				new ClassPathXmlApplicationContext("/spring-context.xml");
-		
-			EduDao eduDao = ctx.getBean("eduDao", EduDao.class);
-			
-			
-//			eduDao.getStudent().setName("이명선");
-			
-			
-//			Assert.assertEquals("이명선", eduDao.getStudent().getName());
-			
-//			String name = eduDao.getStudent().getName();
-//			
-//			Assert.assertTrue(name.equals("이명선"));
-			
-			//오만거 다 비교할 수 있음.ㅎ
-			
-			Assert.assertNull(eduDao.getStudent()); //정말 자주쓰일것임! 얘는 true
-//			Assert.assertNull(eduDao); //얘는 false.
-			
-	}
 	
 	@Test
 	@Ignore	//ignore은 보류/완성의 의미로 JUnit으로 실행 x(보통 완성하고 많이씀)
