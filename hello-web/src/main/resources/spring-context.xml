@@ -14,5 +14,8 @@
 		</constructor-arg>
 	
 		<constructor-arg type="int" value="20"/>
+		<constructor-arg type="String">
+			<value>이야신기하다</value>
+		</constructor-arg>
 	</bean>
 </beans>
